@@ -19,7 +19,7 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon'
 };
 
-function handleRequest(req, res) {
+const server = http.createServer((req, res) => {
   let reqUrl = req.url.split('?')[0];
   if (reqUrl === '/') reqUrl = '/index.html';
 
@@ -44,14 +44,8 @@ function handleRequest(req, res) {
     const stream = fs.createReadStream(filePath);
     stream.pipe(res);
   });
-}
+});
 
-// Support both local CLI execution and serverless module export
-if (require.main === module) {
-  const server = http.createServer(handleRequest);
-  server.listen(PORT, HOST, () => {
-    console.log(`Server running at http://localhost:${PORT}/`);
-  });
-}
-
-module.exports = handleRequest;
+server.listen(PORT, HOST, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
+});

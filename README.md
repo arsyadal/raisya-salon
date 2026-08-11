@@ -41,7 +41,7 @@ Website resmi dan sistem reservasi online interaktif untuk **Raisya Salon**, sal
 
 2. **Jalankan preview server lokal**:
    ```bash
-   node server.js
+   node local-server.js
    ```
 
 3. **Buka di browser**:
