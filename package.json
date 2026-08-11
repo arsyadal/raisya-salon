@@ -1,0 +1,9 @@
+{
+  "name": "raisya-salon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website resmi Raisya Salon Karawang",
+  "scripts": {
+    "build": "echo 'Build complete'"
+  }
+}
